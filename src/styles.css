@@ -1,0 +1,76 @@
+/*body */
+.container {
+  background-color: lightblue;
+  margin: auto;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-top: 300px;
+  margin-bottom: 300px;
+  border: 5px solid black;
+}
+
+.dropdown-toggle {
+  border: thick;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+  opacity: 0.5;
+  color: black;
+}
+
+.search-bar {
+  border: 15px thick black;
+}
+
+.form-control {
+  margin: 15px 12px;
+  border: 15px thick black;
+}
+
+.grid-container {
+  text-align: center;
+}
+
+.temperature {
+  font-size: 40px;
+  font-weight: 700;
+  position: relative;
+  top: 10px;
+}
+
+.degrees-first {
+  position: relative;
+  bottom: 20px;
+}
+
+.degrees {
+  opacity: 0.5;
+}
+
+hr {
+  border: solid black;
+  width: 85%;
+  float: center;
+  margin: auto;
+}
+
+.opacity {
+  opacity: 0.5;
+}
+.gabby {
+  width: 500px;
+  margin-left: 15px;
+  border-radius: 25em/20em;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  border: solid;
+}
