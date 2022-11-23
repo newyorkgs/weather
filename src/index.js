@@ -1,3 +1,4 @@
+/*
 let weather = {
   paris: {
     temp: 19.7,
@@ -37,3 +38,37 @@ if (weather[city] !== undefined) {
     `Sorry, we don't know the weather for this city, try going to: https://www.google.com/search?q=weather+${city}`
   );
 }
+*/
+let now = new Date();
+
+let dates = document.querySelector("#dates");
+
+let date = now.getDate();
+let hours = now.getHours();
+let minutes = now.getMinutes();
+
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+let day = days[now.getDay()];
+
+dates.innerHTML = `${day} ${hours}:${minutes}`;
+
+//Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
+
+function search(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = `${searchInput.value}`;
+}
+
+let form = document.querySelector("#citySearch");
+form.addEventListener("submit", search);
