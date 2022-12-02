@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather App</title>
 
     <script
@@ -57,7 +57,7 @@
 
       <form id="citySearch">
         <div class="row search-bar">
-          <div class="col-9">
+          <div class="col-6">
             <input
               type="search"
               placeholder="City, State, Zip..."
@@ -66,12 +66,21 @@
             />
           </div>
           <div class="col-3">
-            <input type="submit" value="Search" class="form-control" />
+            <input type="submit" id="box" value="Search" class="form-control" />
+          </div>
+
+          <div class="col-3">
+            <input
+              type="submit"
+              id="box"
+              value="Current"
+              class="form-control currentBox"
+            />
           </div>
         </div>
       </form>
 
-      <h1>Denver, Colorado</h1>
+      <h1 id="city"></h1>
 
       <div class="grid-container">
         <div class="grid-column: 4 opacity" id="dates">Wednesday 3:00 PM</div>
@@ -81,11 +90,11 @@
             src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
             alt="cloudy icon"
           />
-          <span class="temperature">60</span
+          <span class="temperature" id="tempInput"></span
           ><span class="degrees-first"> ℉ | <a href="#">℃</a></span>
         </div>
 
-        <div class="grid-column: 4 opacity">Mostly Sunny</div>
+        <div class="grid-column: 4 opacity" id="describe"></div>
       </div>
       <br />
 
@@ -118,15 +127,15 @@
       <div class="row" align="center">
         <div class="col align-items">Wind</div>
         <div class="col-4"></div>
-        <div class="col align-items">4%</div>
+        <div class="col align-items"><span id="wind"></span>%</div>
       </div>
       <br />
       <hr />
 
       <div class="row" align="center">
-        <div class="col align-items">Hummitity</div>
+        <div class="col align-items">Humidity</div>
         <div class="col-4"></div>
-        <div class="col align-items">14%</div>
+        <div class="col align-items"><span id="humidity"></span>%</div>
       </div>
       <br />
       <hr />
