@@ -19,6 +19,7 @@ h1 {
   text-align: center;
   opacity: 0.5;
   color: black;
+  margin-top: 20px;
 }
 
 .search-bar {
@@ -26,8 +27,13 @@ h1 {
 }
 
 .form-control {
-  margin: 15px 12px;
   border: 15px thick black;
+  padding: 8px 2px;
+  margin: 0 auto;
+}
+
+#box {
+  background-color: #fad3d6;
 }
 
 .grid-container {

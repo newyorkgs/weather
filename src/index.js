@@ -61,14 +61,49 @@ let day = days[now.getDay()];
 dates.innerHTML = `${day} ${hours}:${minutes}`;
 
 //Add a search engine, when searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
+function showTemp(response) {
+  console.log(response);
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#tempInput").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#describe").innerHTML = response.data.weather[0].main;
+}
 
-function search(event) {
+function search(cityName) {
+  let key = "7ff2ff06932377a6042db4dd6cd7c86a";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}&units=imperial`;
+  axios.get(url).then(showTemp);
+}
+
+function handleSubmit(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#search-input");
+  //make api call to openweather, once I get response display city name and temp.
+  let cityName = document.querySelector("#search-input").value;
+  search(cityName);
+}
 
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${searchInput.value}`;
+function searchLocation(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "7ff2ff06932377a6042db4dd6cd7c86a";
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+  axios.get(url).then(showTemp);
+}
+
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
 let form = document.querySelector("#citySearch");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
+
+let currentBox = document.querySelector(".currentBox");
+currentBox.addEventListener("click", getCurrentPosition);
+
+search("New York");
