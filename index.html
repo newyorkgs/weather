@@ -35,126 +35,154 @@
     </head>
     <body>
         <div class="container">
-            <div class="dropdown">
-                <a
-                    class="btn btn-secondary dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                >
-                    Dropdown
-                </a>
+            <div class="weather-container">
+                <div class="dropdown">
+                    <a
+                        class="btn btn-secondary dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        Dropdown
+                    </a>
 
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="dropdown-item" href="#">Smart forecast</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#">City webcams</a></li>
-                    <li><a class="dropdown-item" href="#">Emergency Map</a></li>
-                </ul>
-            </div>
-
-            <br />
-
-            <form id="citySearch">
-                <div class="row search-bar">
-                    <div class="col-6">
-                        <input
-                            type="search"
-                            placeholder="City, State, Zip..."
-                            class="form-control"
-                            id="search-input"
-                        />
-                    </div>
-                    <div class="col-3">
-                        <input
-                            type="submit"
-                            id="box"
-                            value="Search"
-                            class="form-control"
-                        />
-                    </div>
-
-                    <div class="col-3">
-                        <input
-                            type="submit"
-                            id="box"
-                            value="Current"
-                            class="form-control currentBox"
-                        />
-                    </div>
-                </div>
-            </form>
-
-            <h1 id="city"></h1>
-
-            <div class="grid-container">
-                <div class="grid-column: 4 opacity" id="dates">
-                    Wednesday 3:00 PM
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#">Smart forecast</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">City webcams</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Emergency Map</a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="grid-column: 4">
-                    <img
-                        src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                        alt="cloudy icon"
-                    />
-                    <span class="temperature" id="tempInput"></span
-                    ><span class="degrees-first"> ℉ | <a href="#">℃</a></span>
-                </div>
-
-                <div class="grid-column: 4 opacity" id="describe"></div>
-            </div>
-            <br />
-
-            <hr />
-            <br />
-            <div class="row" align="center">
-                <div class="col mx-1">Wed</div>
-                <div class="col mx-1">Thurs</div>
-                <div class="col mx-1">Fri</div>
-                <div class="col mx-1">Sat</div>
-                <div class="col mx-1">Sun</div>
-            </div>
-            <div class="row" align="center">
-                <div class="col mx-1"><span class="dot"></span></div>
-                <div class="col mx-1"><span class="dot"></span></div>
-                <div class="col mx-1"><span class="dot"></span></div>
-                <div class="col mx-1"><span class="dot"></span></div>
-                <div class="col mx-1"><span class="dot"></span></div>
-            </div>
-            <div class="row" align="center">
-                <div class="col mx-1">60° <span class="degrees">37°</span></div>
-                <div class="col mx-1">59° <span class="degrees">37°</span></div>
-                <div class="col mx-1">65° <span class="degrees">38°</span></div>
-                <div class="col mx-1">69° <span class="degrees">43°</span></div>
-                <div class="col mx-1">68° <span class="degrees">42°</span></div>
-            </div>
-            <br />
-            <hr />
-
-            <div class="row" align="center">
-                <div class="col align-items">Wind</div>
-                <div class="col-4"></div>
-                <div class="col align-items"><span id="wind"></span>%</div>
-            </div>
-            <br />
-            <hr />
-
-            <div class="row" align="center">
-                <div class="col align-items">Humidity</div>
-                <div class="col-4"></div>
-                <div class="col align-items"><span id="humidity"></span>%</div>
-            </div>
-            <br />
-            <hr />
-
-            <div class="row" align="center">
-                <div class="col align-items">Precipitation</div>
-                <div class="col-4"></div>
-                <div class="col align-items">4mph</div>
                 <br />
+
+                <form id="citySearch">
+                    <div class="row search-bar">
+                        <div class="col-6">
+                            <input
+                                type="search"
+                                placeholder="City, State, Zip..."
+                                class="form-control"
+                                id="search-input"
+                            />
+                        </div>
+                        <div class="col-3">
+                            <input
+                                type="submit"
+                                id="box"
+                                value="Search"
+                                class="form-control"
+                            />
+                        </div>
+
+                        <div class="col-3">
+                            <input
+                                type="submit"
+                                id="box"
+                                value="Current"
+                                class="form-control currentBox"
+                            />
+                        </div>
+                    </div>
+                </form>
+
+                <h1 id="city"></h1>
+
+                <div class="grid-container">
+                    <div class="grid-column: 4 opacity" id="dates">
+                        Wednesday 3:00 PM
+                    </div>
+
+                    <div class="grid-column: 4">
+                        <img
+                            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                            alt="cloudy icon"
+                        />
+                        <span class="temperature" id="tempInput"></span
+                        ><span class="degrees-first">
+                            ℉ | <a href="#">℃</a></span
+                        >
+                    </div>
+
+                    <div class="grid-column: 4 opacity" id="describe"></div>
+                </div>
+                <br />
+
+                <hr />
+                <br />
+                <div class="row" align="center">
+                    <div class="col mx-1">Wed</div>
+                    <div class="col mx-1">Thurs</div>
+                    <div class="col mx-1">Fri</div>
+                    <div class="col mx-1">Sat</div>
+                    <div class="col mx-1">Sun</div>
+                </div>
+                <div class="row" align="center">
+                    <div class="col mx-1"><span class="dot"></span></div>
+                    <div class="col mx-1"><span class="dot"></span></div>
+                    <div class="col mx-1"><span class="dot"></span></div>
+                    <div class="col mx-1"><span class="dot"></span></div>
+                    <div class="col mx-1"><span class="dot"></span></div>
+                </div>
+                <div class="row" align="center">
+                    <div class="col mx-1">
+                        60° <span class="degrees">37°</span>
+                    </div>
+                    <div class="col mx-1">
+                        59° <span class="degrees">37°</span>
+                    </div>
+                    <div class="col mx-1">
+                        65° <span class="degrees">38°</span>
+                    </div>
+                    <div class="col mx-1">
+                        69° <span class="degrees">43°</span>
+                    </div>
+                    <div class="col mx-1">
+                        68° <span class="degrees">42°</span>
+                    </div>
+                </div>
+                <br />
+                <hr />
+
+                <div class="row" align="center">
+                    <div class="col align-items">Wind</div>
+                    <div class="col-4"></div>
+                    <div class="col align-items"><span id="wind"></span>%</div>
+                </div>
+                <br />
+                <hr />
+
+                <div class="row" align="center">
+                    <div class="col align-items">Humidity</div>
+                    <div class="col-4"></div>
+                    <div class="col align-items">
+                        <span id="humidity"></span>%
+                    </div>
+                </div>
+                <br />
+                <hr />
+
+                <div class="row" align="center">
+                    <div class="col align-items">Precipitation</div>
+                    <div class="col-4"></div>
+                    <div class="col align-items">4mph</div>
+                    <br />
+                </div>
             </div>
+            <small class="sourceCode"
+                ><a
+                    href="https://github.com/newyorkgs/weather-app.git"
+                    target="_blank"
+                    >Open Source Code</a
+                >
+                by Gabrielle Seri</small
+            >
         </div>
         <script src="src/index.js"></script>
     </body>
